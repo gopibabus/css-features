@@ -310,7 +310,55 @@ p {
 
 
 ### Combinators
-### Examples
+```html
+<style>
+  nav a {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+
+<nav>
+  <a href="">Home</a>
+  -
+  <a href="">Shop</a>
+</nav>
+
+<p>
+  Hello world! You might be interested in reading <a href="">an article</a>!
+</p>
+```
+> [!NOTE]
+> By putting a space between nav and a, we're combining two selectors in a very specific way: we're saying that the styles should only apply to a tags that are nested within nav tags. The first two links in the snippet qualify, but the last one doesn't.
+
+> [!NOTE]
+> The term “combinator” refers to a character that combines multiple selectors. In this case, the space character combines nav and a to create a descendant selector.
+
+**One more combinator(>)**
+```html
+<style>
+  li {
+    margin-bottom: 8px;
+  }
+  
+  .main-list > li {
+    border: 2px dotted;
+  }
+</style>
+
+<ul class="main-list">
+  <li>Salt</li>
+  <li>Pepper</li>
+  <li>
+    Fruits & Veg:
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Carrots</li>
+    </ul>
+  </li>
+</ul>
+```
 
 ## Color
 
