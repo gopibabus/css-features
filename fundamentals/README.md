@@ -256,9 +256,59 @@ p {
 </section>
 ```
 > [!NOTE]  
-> The :last-child pseudo-class will only select <p> tags which are the final element within its container. It needs to be the last child within its parent. Similarly, the :first-child pseudo-class will match the first child within a parent container.
+> The :last-child pseudo-class will only select "p" tags which are the final element within its container. It needs to be the last child within its parent. Similarly, the :first-child pseudo-class will match the first child within a parent container.
 
 ### Pseudo-elements
+> [!NOTE]  
+> Pseudo-elements are like pseudo-classes, but they don't target a specific state. Instead, they target "sub-elements" within an element.
+
+```html
+<style>
+  input {
+    font-size: 1rem;
+  }
+  input::placeholder {
+    color: goldenrod;
+  }
+</style>
+
+<label>
+  Postal Code:
+  <input
+    type="text"
+    placeholder="A1A 1A1"
+  />
+</label>
+```
+
+> [!NOTE]  
+> In terms of syntax, pseudo-elements use two colons instead of one (::), though some pseudo-elements also support single-colon syntax.
+
+> [!NOTE]
+> Pseudo-element selectors target elements in the DOM that we haven't explicitly created with HTML tags.
+
+**before and after**
+```html
+<style>
+  p::before {
+    content: '→ ';
+    color: deeppink;
+  }
+  
+  p::after {
+    content: ' ←';
+    color: deeppink;
+  }
+</style>
+
+<p>
+  This paragraph has little arrows!
+</p>
+```
+> [!NOTE]
+> These pseudo-elements are added inside the element, right before and after the element's content.
+
+
 ### Combinators
 ### Examples
 
