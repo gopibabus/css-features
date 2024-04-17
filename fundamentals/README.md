@@ -487,5 +487,82 @@ strong {
 
 ## Typography
 
+### Font families
+```css
+* {
+    font-family: Arial;
+}
+```
 
-## Debugging in the Browser
+### Text Formatting
+```css
+* {
+    font-weight: bold;
+    font-weight: 300;
+    font-style: italic;
+}
+
+nav a {
+  text-decoration: none;
+}
+```
+
+### Alignment
+```html
+<style>
+    p.left {
+  text-align: left;
+    }
+    p.right {
+    text-align: right;
+    }
+    p.center {
+    text-align: center;
+    }
+
+    p {
+    margin-bottom: 32px;
+    }
+</style>
+
+<p class="left">
+  This paragraph uses the default “left” alignment.
+</p>
+<p class="right">
+  This one, meanwhile, pops over to the other side! It flips the default behaviour.
+</p>
+<p class="center">
+  Finally, we end in the middle.
+</p>
+```
+
+### Text Transforms
+```css
+* {
+    /* RENDER WITH ALL CAPS */
+    text-transform: uppercase;
+
+    /* Capitalize The First Letter Of Every Word */
+    text-transform: capitalize;
+}
+```
+
+### Spacing
+```html
+<style>
+  /* Try tweaking these properties! */
+  h3 {
+    letter-spacing: 3px;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+
+<h3>About Us</h3>
+<p>
+  The Lumen Group was founded in 1984 in Berlin, Germany. We create purposeful products for the next generation of leaders and executives, luminaries and visionaries of tomorrow.
+</p>
+```
