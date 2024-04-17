@@ -362,8 +362,130 @@ p {
 
 ## Color
 
+```css
+strong {
+  color: red;
+}
+```
+
+### Color Formats
+```css
+// hex codes
+.colorful-thing {
+  color: #FF0000;
+  border-bottom: 3px solid hsl(100deg 75% 50%);
+}
+
+
+// HSL format
+.colorful-thing {
+  color: hsl(200deg 100% 50%);
+  border-bottom: 3px solid hsl(100deg 75% 50%);
+}
+// HSL format with transparency
+.fourth.box {
+  background-color: hsl(340deg 100% 50% / 0.25);
+}
+```
+
+### Background Color
+```html
+<style>
+  em {
+    background-color: hsl(50deg 100% 50%);
+  }
+</style>
+
+<p>
+  This is a paragraph with a
+  <em>highlighted section</em>.
+</p>
+```
+
 ## Units
 
+```css
+# px unit
+.box {
+  width: 1000px;
+  margin-top: 32px;
+  padding: 8px;
+}
+```
+> [!NOTE]  
+> **Pixels** are nice because they correspond more-or-less with what you see on the screen*.
+
+```html
+<style>
+  p {
+    /* Change me! */
+    font-size: 18px;
+    
+    padding-bottom: 2em;
+    border: 1px solid;
+  }
+</style>
+
+<p>
+  This paragraph has a relative amount of bottom padding!
+</p>
+```
+> [!NOTE]  
+> **em** a relative unit, equal to the font size of the current element.
+
+```html
+<style>
+  html {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: gray;
+    }
+    p {
+    font-size: 1rem;
+    }
+</style>
+
+<h1>What's a staple? The list expands.</h1>
+<h2>Jan. 1, 1991</h2>
+<p>Conventional agricultural wisdom holds that only a handful of crop species -- as few as 7 and no more than 30, depending on different assessments -- account for most of the plant food consumed by humanity. But a new study says more than 100 species and possibly as many as 200 are important food sources.</p>
+```
+> [!NOTE]  
+> The **rem** unit is quite a lot like the em unit, with one crucial difference: it's always relative to the root element, the "html" tag.
+
+> [!WARNING]  
+> Please note, you shouldn't actually set a "px" font size on the html tag.
+
+
+```html
+<style>
+  .box {
+    width: 250px;
+    height: 250px;
+    background-color: pink;
+  }
+
+  .child {
+    width: 50%;
+    height: 75%;
+    background-color: black;
+  }
+</style>
+
+<div class="box">
+  <div class="child"></div>
+</div>
+```
+> [!NOTE]  
+> The percentage unit is often used with width/height, as a way to consume a portion of the available space.
+
 ## Typography
+
 
 ## Debugging in the Browser
