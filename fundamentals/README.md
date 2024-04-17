@@ -160,14 +160,104 @@ p {
 > [!NOTE]
 > If our window is at least 300px wide, however, we apply special overrides. This includes showing large-screens elements, and hiding small-screens elements.
 
-> [!NOTE]
+> [!TIP]
 > This trick is often used for navigation. Desktop users see a list of links, whereas mobile users see a hamburger icon.
 
 > [!IMPORTANT]  
 > Inside the parentheses, we typically use either max-width to add styles on small screens, or min-width to add styles on larger ones.
 
-## Selectors
 ### Pseudo-classes
+
+**:hover**
+```html
+<style>
+  button:hover {
+    color: blue;
+  }
+</style>
+
+<button>Hover over me!</button>
+```
+
+> [!NOTE]  
+> Pseudo-classes let us apply a chunk of CSS based on an element's current state. In this case, we're adding a blue text color when the element is hovered.
+
+**:focus**
+```html
+<style>
+  button:focus {
+    border: 2px solid royalblue;
+    background: royalblue;
+    color: white;
+  }
+</style>
+
+<button>Hello</button>
+<button>world</button>
+<button>!</button>
+```
+> [!NOTE]  
+> The :focus pseudo-class allows us to apply styles exclusively when an interactive element has focus.
+
+
+> [!NOTE]  
+> For most users, a button can be focused by clicking on it. Focus can then be moved between buttons by pressing “Tab” (to go forward) or “Shift” + “Tab” (to go backwards).
+
+
+**:checked**
+
+```html
+<style>
+  input:checked {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+
+<h1>Pizza Toppings</h1>
+<br />
+<label>
+  <input type="checkbox" />
+  Avocado
+</label>
+<br />
+<label>
+  <input type="checkbox" />
+  Broccoli
+</label>
+<br />
+<label>
+  <input type="checkbox" />
+  Carrots
+</label>
+```
+> [!NOTE]  
+> The :checked pseudo-class only applies to checkboxes and radio buttons that are "filled in". You can apply additional styles to indicate that the input is activated.
+
+
+**:first/last child**
+```html
+<style>
+  p {
+    margin-bottom: 1em;
+  }
+  p:last-child {
+    margin-bottom: 0px;
+  }
+</style>
+
+<section>
+  <p>This is a paragraph!</p>
+  <p>This is another paragraph!</p>
+  <p>
+    What do you know, it's a third
+    paragraph!
+  </p>
+</section>
+```
+> [!NOTE]  
+> The :last-child pseudo-class will only select <p> tags which are the final element within its container. It needs to be the last child within its parent. Similarly, the :first-child pseudo-class will match the first child within a parent container.
+
 ### Pseudo-elements
 ### Combinators
 ### Examples
