@@ -318,6 +318,164 @@ Following snippets are same:
 
 
 ### Border
+There are three styles specific to border:
+* Border width (eg. 3px, 1em)
+* Border style (eg. solid, dotted)
+* Border color (eg. hotpink, black)
+
+They can be combined into a shorthand. The only required field is border-style. Without it, no border will be shown.
+```css
+.box {
+  border: 3px solid hotpink;
+}
+
+.not-good {
+  /* 🙅‍♀️ Won't work – needs a style! */
+  border: 2px pink;
+}
+
+.good {
+  /* 🙆‍♀️ Will produce a black, 3px-thick border */
+  border: solid;
+}
+
+```
+
+As with padding, you can overwrite broad properties with specific ones.
+
+```html
+<style>
+  .box {
+    width: 50px;
+    height: 50px;
+    border: 10px solid black;
+  }
+
+  .box.one {
+    border-color: deeppink;
+  }
+  .box.two {
+    border-color: gold;
+  }
+  .box.three {
+    border-color: turquoise;
+  }
+</style>
+
+<div class="box one"></div>
+<div class="box two"></div>
+<div class="box three"></div>
+```
+
+> [!WARNING]  
+>  If we don't specify a border color, it'll default to using the element's text color. Please run following example.
+
+```html
+<style>
+  .box {
+    /* No border color specified: */
+    border: 4px solid;
+  }
+  .box.one {
+    /* Specify the *text* color: */
+    color: hotpink;
+  }
+  
+  .box.two {
+    color: slateblue;
+  }
+</style>
+
+<div class="box one">One</div>
+<div class="box two">Two</div>
+<div class="box three">Three</div>
+```
+
+> [!TIP]
+> **currentColor** is always a reference to the element's derived text color (whether set explicitly or inherited), and it can be used anywhere a color might be used.
+
+```css
+.box {
+  color: hotpink;
+  border: 1px solid currentColor;
+  box-shadow: 2px 2px 2px currentColor;
+}
+```
+
+**Border Radius**
+Like padding, border-radius accepts discrete values for each direction. Unlike padding, it's focused on specific corners, not specific sides.
+
+Following example will render shape(square)
+```html
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 4px solid hotpink;
+    border-radius: 25px;
+  }
+</style>
+
+<div class="box"></div>
+```
+
+Following example will render shape(circle)
+```html
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 4px solid hotpink;
+    border-radius: 50%;
+  }
+</style>
+
+<div class="box"></div>
+```
+
+**Border vs Outline**
+
+> [!NOTE]
+> The core difference is that outline doesn't affect layout. Outline is kinda more like box-shadow; it's a cosmetic effect draped over an element, without nudging it around, or changing its size.
+
+Outlines share many of the same properties:
+* border-width becomes outline-width
+* border-color becomes outline-color
+* border-style becomes outline-style
+
+> [!IMPORTANT]
+>  Outlines are stacked outside border, and can sometimes be used as a "second border", for effect.
+
+```html
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 4px solid darkviolet;
+    outline: 4px solid deeppink;
+  }
+</style>
+
+<div class="box"></div>
+```
+
+> [!IMPORTANT]
+> Outlines have a special outline-offset property. It allows you to add a bit of a gap between the element and its outline.
+
+```html
+<style>
+  .outline-offset {
+    width: 100px;
+    height: 100px;
+    border: 4px solid darkviolet;
+    outline: 4px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>
+
+<div class="outline-offset"></div>
+```
+
 ### Margin
 
 ## Flow Layout
